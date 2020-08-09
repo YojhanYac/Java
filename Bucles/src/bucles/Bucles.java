@@ -14,7 +14,7 @@ public class Bucles {
             System.out.println("El valor de la bandera es: " + bandera);
             System.out.println("Ingrese un número por teclado");        //vamos a ingresar números por teclado
 
-            Scanner teclado = new Scanner(System.in);       //creo mi scaneador
+            Scanner teclado = new Scanner(System.in);       //creo mi escaneador
             int tecla = teclado.nextInt();      //guardo el número que ingreso el usuario
 
             if (tecla == 1) {       //pregunto si lo que se ingreso es un 1
