@@ -104,40 +104,45 @@ public class EjerciciosTP4 {
 
         for (int i = 0; i < ciudades.length; i++) {
 
-            System.out.println("Ingrese el nombre de la " + (i+1) + posicion1[i] + " ciudad: ");
+            System.out.print("\nIngrese el nombre de la " + (i+1) + posicion1[i] + " ciudad: ");
             // ciudades [i] = teclado4.nextLine();
             ciudades [i] = teclado4.next();
-            System.out.println("Ingrese la temperatura mínima registrada de " + ciudades [i] + ": ");
+            System.out.print("Ingrese la temperatura mínima registrada de " + ciudades [i] + ": ");
             temperaturasMinimas[i] = teclado4.nextDouble();
-            System.out.println("Ingrese la temperatura máxima registrada de " + ciudades [i] + ": ");
+            System.out.print("Ingrese la temperatura máxima registrada de " + ciudades [i] + ": ");
             temperaturasMaximas[i] = teclado4.nextDouble();
 
-            if (temperaturasMaximas[i] >= temperaturaMasAlta) {
-                temperaturaMasAlta = temperaturasMaximas[i];
-                ciudadConTemperaturaMasAlta = i;
-            } else {
-                if(temperaturasMaximas[i] <= temperaturaMasBaja) {
-                    temperaturaMasBaja = temperaturasMaximas[i];
-                    ciudadConTemperaturaMasBaja = i;
-                }
-            }
-            if (temperaturasMinimas[i] >= temperaturaMasAlta) {
-                temperaturaMasAlta = temperaturasMinimas[i];
-                ciudadConTemperaturaMasAlta = i;
-            } else {
-                if (temperaturasMinimas[i] <= temperaturaMasBaja) {
+            if(i == 0) {
                     temperaturaMasBaja = temperaturasMinimas[i];
-                    ciudadConTemperaturaMasBaja = i;
+                    temperaturaMasAlta = temperaturasMaximas[i];
+            } else {
+                if (temperaturasMaximas[i] >= temperaturaMasAlta) {
+                    temperaturaMasAlta = temperaturasMaximas[i];
+                    ciudadConTemperaturaMasAlta = i;
+                } else {
+                    if(temperaturasMaximas[i] <= temperaturaMasBaja) {
+                        temperaturaMasBaja = temperaturasMaximas[i];
+                        ciudadConTemperaturaMasBaja = i;
+                    }
+                }
+                if (temperaturasMinimas[i] >= temperaturaMasAlta) {
+                    temperaturaMasAlta = temperaturasMinimas[i];
+                    ciudadConTemperaturaMasAlta = i;
+                } else {
+                    if (temperaturasMinimas[i] <= temperaturaMasBaja) {
+                        temperaturaMasBaja = temperaturasMinimas[i];
+                        ciudadConTemperaturaMasBaja = i;
+                    }
                 }
             }
         }
-        System.out.println("\nLa ciudad con temperatura más alta es " + ciudades[ciudadConTemperaturaMasAlta] + " con " + temperaturaMasAlta + "°\nLa ciudad con temperatura más baja es " + ciudades[ciudadConTemperaturaMasBaja] + " con " + temperaturaMasBaja + "°");
+        System.out.println("\n\nLa ciudad con temperatura más alta es " + ciudades[ciudadConTemperaturaMasAlta] + " con " + temperaturaMasAlta + "°\nLa ciudad con temperatura más baja es " + ciudades[ciudadConTemperaturaMasBaja] + " con " + temperaturaMasBaja + "°");
 
         // Ejercicio Nº 2: Matrices
 
         System.out.println("\n-------------------------------------------------------------------------\n");
 
-        System.out.println("1.a) Llevar a cabo un programa que permite cargar completamente con números 5 una matriz de 4x5 (4 filas, 5 columnas).\n");
+        System.out.println("2.a) Llevar a cabo un programa que permite cargar completamente con números 5 una matriz de 4x5 (4 filas, 5 columnas).\n");
 
         int numeros2 [][]= new int [4][5];
 
@@ -166,12 +171,12 @@ public class EjerciciosTP4 {
 
         for (int f = 0; f < razasDePerros.length; f++) {
             for (int c = 0; c < razasDePerros[f].length; c++) {
-                System.out.println("Ingrese nombre de raza: ");
+                System.out.print("Ingrese nombre de raza " + (c+1) + ": ");
                 razasDePerros[f][c] = teclado5.next();
             }
         }
 
-        System.out.print("\nDatos cargados en matriz: \n");
+        System.out.println("\n\nDatos cargados en matriz: \n");
 
         for (int f = 0; f < razasDePerros.length; f++) {
             for (int c = 0; c < razasDePerros[f].length; c++) {
@@ -184,7 +189,7 @@ public class EjerciciosTP4 {
 
         System.out.println("\n-------------------------------------------------------------------------\n");
 
-        System.out.println("1.c) En una tabla de 4 filas y 4 columnas se guardan las notas de 4 alumnos de secundario. Cada fila corresponde a las notas y al promedio de cada alumno.\n");
+        System.out.println("2.c) En una tabla de 4 filas y 4 columnas se guardan las notas de 4 alumnos de secundario. Cada fila corresponde a las notas y al promedio de cada alumno.");
 
         Double alumnos [][] = new Double [4][4];
 
@@ -210,6 +215,8 @@ public class EjerciciosTP4 {
                 }
             }
         }
+
+        System.out.print("\n");
 
         for (int f = 0; f < alumnos.length; f++) {
             System.out.println("\nLas notas del " + (f+1) + posicion2[f] + " alumno: ");
