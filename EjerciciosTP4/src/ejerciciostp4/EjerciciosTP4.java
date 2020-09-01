@@ -6,8 +6,9 @@ public class EjerciciosTP4 {
 
     public static void main(String[] args) {
         
-        //Guías de Ejercicios Nº 4
-        //“Vectores y Matrices”
+        // Guías de Ejercicios Nº 4
+        // “Vectores y Matrices”
+        // Ejercicio Nº 1: Vectores
 
         System.out.println("\n-------------------------------------------------------------------------\n");
 
@@ -42,11 +43,13 @@ public class EjerciciosTP4 {
             numeros [i] = teclado1.nextDouble();
             if (numeros [i] >= mayor) {
                 mayor = numeros [i];
-            } else {
-                if (numeros [i] <= menor) {
+                if (i == 0) {
                     menor = numeros [i];
-                } 
+                }
             }
+            if (numeros [i] <= menor) {
+                    menor = numeros [i];
+            } 
         }
         System.out.println("\nEl número mayor es: " + mayor + " y el número menor es: " + menor);
 
@@ -129,6 +132,95 @@ public class EjerciciosTP4 {
             }
         }
         System.out.println("\nLa ciudad con temperatura más alta es " + ciudades[ciudadConTemperaturaMasAlta] + " con " + temperaturaMasAlta + "°\nLa ciudad con temperatura más baja es " + ciudades[ciudadConTemperaturaMasBaja] + " con " + temperaturaMasBaja + "°");
+
+        // Ejercicio Nº 2: Matrices
+
+        System.out.println("\n-------------------------------------------------------------------------\n");
+
+        System.out.println("1.a) Llevar a cabo un programa que permite cargar completamente con números 5 una matriz de 4x5 (4 filas, 5 columnas).\n");
+
+        int numeros2 [][]= new int [4][5];
+
+        for (int f = 0; f < numeros2.length; f++) {
+            for (int c = 0; c <numeros2[f].length; c++) {
+                numeros2[f][c] = 5;
+            }
+        }
+
+        for (int f = 0; f < numeros2.length; f++) {
+            for (int c = 0; c < numeros2[f].length; c++) {
+                System.out.print(numeros2[f][c] + "  ");
+                if(c == (numeros2[f].length - 1)) {
+                    System.out.print("\n");
+                }
+            }
+        }
+
+        System.out.println("\n-------------------------------------------------------------------------\n");
+
+        System.out.println("1.b) Llevar a cabo un programa que permita cargar mediante teclado una matriz de 3 x 3 (3 filas, 3 columnas) con razas de perros. Una vez cargada la misma, será necesario realizar un recorrido por la misma y mostrar los datos cargados por pantalla.\n");
+
+        String razasDePerros [][] = new String [3][3];
+
+        Scanner teclado5 = new Scanner(System.in);
+
+        for (int f = 0; f < razasDePerros.length; f++) {
+            for (int c = 0; c < razasDePerros[f].length; c++) {
+                System.out.println("Ingrese nombre de raza: ");
+                razasDePerros[f][c] = teclado5.next();
+            }
+        }
+
+        System.out.print("\nDatos cargados en matriz: \n");
+
+        for (int f = 0; f < razasDePerros.length; f++) {
+            for (int c = 0; c < razasDePerros[f].length; c++) {
+                System.out.print(razasDePerros[f][c] + "  ");
+                if(c == (razasDePerros[f].length - 1)) {
+                    System.out.print("\n");
+                }
+            }
+        }
+
+        System.out.println("\n-------------------------------------------------------------------------\n");
+
+        System.out.println("1.c) En una tabla de 4 filas y 4 columnas se guardan las notas de 4 alumnos de secundario. Cada fila corresponde a las notas y al promedio de cada alumno.\n");
+
+        Double alumnos [][] = new Double [4][4];
+
+        Double promedio1 = 0.0;
+
+        Scanner teclado6 = new Scanner(System.in);
+
+        String posicion2[] = {"er","do","er","to"};
+
+        String nombreDePosicion = "";
+
+        for (int f = 0; f < alumnos.length; f++) {
+            nombreDePosicion = (f+1) + posicion2[f];
+            promedio1 = 0.0;
+            System.out.print("\n");
+            for (int c = 0; c < alumnos[f].length; c++) {
+                if(c == (alumnos[f].length - 1)) {
+                    alumnos[f][c] = promedio1 / 3;
+                } else {
+                    System.out.print("Ingrese la " + (c+1) + posicion2[c] + " nota del " + nombreDePosicion + " alumno: ");
+                    alumnos[f][c] = teclado6.nextDouble();
+                    promedio1 = promedio1 + alumnos[f][c];
+                }
+            }
+        }
+
+        for (int f = 0; f < alumnos.length; f++) {
+            System.out.println("\nLas notas del " + (f+1) + posicion2[f] + " alumno: ");
+            for (int c = 0; c < alumnos[f].length; c++) {
+                if (c == (alumnos[f].length - 1)) {
+                    System.out.println("El promedio es: " + alumnos[f][c]);
+                } else {
+                    System.out.print(alumnos[f][c] + "  ");
+                }
+            }
+        }
 
         System.out.println("\n-------------------------------------------------------------------------\n");
 
